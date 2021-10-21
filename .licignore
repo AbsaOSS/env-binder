@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But inject license into these files...
+!Makefile
+!*.go
+!*.yml
+!*.yaml
+
+# And skip generated files...
+# /dir/**
+# file.go
