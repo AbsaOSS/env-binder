@@ -5,6 +5,7 @@
 !CODEOWNERS
 !LICENSE
 !README.md
+!MAINTAINERS
 !/.gitignore
 !.licignore
 !.golangci
