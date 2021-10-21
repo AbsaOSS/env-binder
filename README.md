@@ -3,7 +3,7 @@ The ENV-BINDER package is used to easily bind environment variables to GO struct
 be usable in the widest possible range of scenarios.Among other things, it supports variable 
 prefixes and bindings to unexported arrays. Take a look at the following usage example:
 ```golang
-import "github.com/kuritka/12f/env"
+import "github.com/AbsaOSS/env-binder/env"
 
 type Endpoint struct {
 	URL string `env:"ENDPOINT_URL, require=true"`
@@ -138,19 +138,40 @@ is a perfectly valid configuration
 ## API
 If the Bind function is not enough for you, you can use any of the static functions of our API:
 ```go
-// string
+import "github.com/AbsaOSS/env-binder/env"
+
+// GetEnvAsStringOrFallback returns the env variable for the given key
+// and falls back to the given defaultValue if not set
 GetEnvAsStringOrFallback(key, defaultValue string) string
+
+// GetEnvAsArrayOfStringsOrFallback returns the env variable for the given key
+// and falls back to the given defaultValue if not set
+// GetEnvAsArrayOfStringsOrFallback trims all whitespaces from input i.e. "us, fr, au" -> {"us","fr","au"}
 GetEnvAsArrayOfStringsOrFallback(key string, defaultValue []string) []string
 
-// int
+// GetEnvAsIntOrFallback returns the env variable (parsed as integer) for
+// the given key and falls back to the given defaultValue if not set
 GetEnvAsIntOrFallback(key string, defaultValue int) (int, error)
-GetEnvAsArrayOfIntsOrFallback(key string, defaultValue []int) ([]int, error) 
 
-// float64
+// GetEnvAsArrayOfIntsOrFallback returns the env variable for the given key
+// and falls back to the given defaultValue if not set
+GetEnvAsArrayOfIntsOrFallback(key string, defaultValue []int) ([]int, error)
+
+
+// GetEnvAsFloat64OrFallback returns the env variable (parsed as float64) for
+// the given key and falls back to the given defaultValue if not set
 GetEnvAsFloat64OrFallback(key string, defaultValue float64) (float64, error)
+
+// GetEnvAsArrayOfFloat64OrFallback returns the env variable for the given key
+// and falls back to the given defaultValue if not set
 GetEnvAsArrayOfFloat64OrFallback(key string, defaultValue []float64) ([]float64, error)
 
-// bool
+
+// GetEnvAsBoolOrFallback returns the env variable for the given key,
+// parses it as boolean and falls back to the given defaultValue if not set
 GetEnvAsBoolOrFallback(key string, defaultValue bool) (bool, error)
+
+// GetEnvAsArrayOfBoolOrFallback returns the env variable for the given key
+// and falls back to the given defaultValue if not set
 GetEnvAsArrayOfBoolOrFallback(key string, defaultValue []bool) ([]bool, error) 
 ```
