@@ -1,4 +1,11 @@
 # ENV binder
+[![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Go Reference](https://pkg.go.dev/badge/github.com/AbsaOSS/env-binder.svg)](https://pkg.go.dev/github.com/AbsaOSS/env-binder?branch=master)
+![Build Status](https://github.com/AbsaOSS/env-binder/actions/workflows/build.yaml/badge.svg?branch=master)
+![Linter](https://github.com/AbsaOSS/env-binder/actions/workflows/lint.yaml/badge.svg?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/AbsaOSS/env-binder)](https://goreportcard.com/report/github.com/AbsaOSS/env-binder?branch=master)
+
+
 The ENV-BINDER package is used to easily bind environment variables to GO structures. ENV-BINDER is designed to
 be usable in the widest possible range of scenarios.Among other things, it supports variable
 prefixes and bindings to unexported arrays. Take a look at the following usage example:
