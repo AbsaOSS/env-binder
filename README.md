@@ -6,6 +6,9 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/AbsaOSS/env-binder)](https://goreportcard.com/report/github.com/AbsaOSS/env-binder?branch=master)
 
 
+> _this module is deprecated: use the module https://github.com/AbsaOSS/go-k8s-operator-binder , which contains significant extensions but is fully backwards compatible._ 
+
+
 The ENV-BINDER package is used to easily bind environment variables to GO structures. ENV-BINDER is designed to
 be usable in the widest possible range of scenarios.Among other things, it supports variable
 prefixes and bindings to unexported arrays. Take a look at the following usage example:
